@@ -1,4 +1,4 @@
-# Contexto do projeto BIOQAV para os próximos agentes
+# Contexto do projeto BIOQAV
 
 ## 1. Finalidade deste documento
 
@@ -10,18 +10,20 @@ Este arquivo consolida o contexto operacional extraído da transcrição da reun
 
 ## 2. Participantes e empresas
 
-| Pessoa | Empresa | Papel indicado na conversa |
+| Pessoa | Empresa | Papel indicado |
 |---|---|---|
 | Pedro | PSA-X | Coordenação da oportunidade e articulação comercial no Brasil, em conjunto com Paulo; participação na estrutura de suporte brasileiro. |
 | Paulo | PSA-X | Interface técnica principal no Brasil, responsável por traduzir/tropicalizar a conversa técnica entre o fornecedor chinês e o time do EPC. |
 | Leonardo Rosseto | R2 | Aproximação comercial com o EPC, especialmente com orçamento/suprimentos, e ponte institucional para a oportunidade. |
 | Mateus | NOV | Originação da oportunidade e ligação com a China/WCE; apoio de relacionamento e acesso a fornecedores, sujeito a regras de conflito de interesse e rastreabilidade da NOV. |
 
-**Entidades ainda não confirmadas:** a transcrição menciona WCE, WCR, WC, “W7”, RV, Tenenge/Tenente e outras grafias possivelmente geradas pelo reconhecimento de voz. Confirmar razão social, nome comercial, domínio, escopo e relação contratual de cada entidade antes de qualquer contato externo.
+**Entidades ainda não confirmadas:** a transcrição menciona WCE, Tenenge. Confirmar razão social, nome comercial, domínio, escopo e relação contratual de cada entidade antes de qualquer contato externo.
+
+
 
 ## 3. Oportunidade em avaliação
 
-A conversa tratou de uma oportunidade para apresentar a WCE como fornecedora de equipamentos e/ou tecnologia para um projeto brasileiro de produção de bioQAV e diesel associado à Petrobras, com participação de uma empresa EPC referida na reunião como **Tenenge/Tenente** e descrita como sucessora ou braço relacionado à antiga Odebrecht.
+A conversa tratou de uma oportunidade para apresentar a WCE como fornecedora de equipamentos e/ou tecnologia para um projeto brasileiro de produção de bioQAV e diesel associado à Petrobras, com participação de uma empresa EPC referida na reunião como Tenenge e descrita como sucessora ou braço relacionado à antiga Odebrecht.
 
 O objetivo comercial preliminar é oferecer uma alternativa competitiva de fornecimento durante a fase de projeto detalhado e suprimentos, aproveitando:
 
@@ -29,7 +31,7 @@ O objetivo comercial preliminar é oferecer uma alternativa competitiva de forne
 - a capacidade de Mateus de conectar a equipe brasileira à China e aos fornecedores;
 - o conhecimento técnico de Paulo para fazer a interface e a “tropicalização” da solução;
 - a experiência de Leonardo em aproximação comercial e acesso ao núcleo de orçamento/suprimentos do EPC;
-- o suporte brasileiro e a coordenação comercial de Pedro/PSA-X.
+- o suporte brasileiro e a coordenação comercial da PSA-X.
 
 O escopo não deve ser limitado a trocadores de calor. Foram citados como possibilidades, dependendo do processo e da lista de equipamentos do EPC: vasos de pressão, trocadores, reatores, tanques, bombas, filtros/centrífugas, skids de injeção química, sistemas de vácuo, equipamentos para hidrogênio e outros equipamentos de processo.
 
