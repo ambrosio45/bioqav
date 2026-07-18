@@ -10,16 +10,14 @@ Este arquivo consolida o contexto operacional extraído da transcrição da reun
 
 ## 2. Participantes e empresas
 
-| Pessoa | Empresa | Papel indicado |
-|---|---|---|
-| Pedro | PSA-X | Coordenação da oportunidade e articulação comercial no Brasil, em conjunto com Paulo; participação na estrutura de suporte brasileiro. |
-| Paulo | PSA-X | Interface técnica principal no Brasil, responsável por traduzir/tropicalizar a conversa técnica entre o fornecedor chinês e o time do EPC. |
-| Leonardo Rosseto | R2 | Aproximação comercial com o EPC, especialmente com orçamento/suprimentos, e ponte institucional para a oportunidade. |
-| Mateus | NOV | Originação da oportunidade e ligação com a China/WCE; apoio de relacionamento e acesso a fornecedores, sujeito a regras de conflito de interesse e rastreabilidade da NOV. |
+| Pessoa           | Empresa | Papel indicado                                                                                                                                                             |
+| ---------------- | ------- | -------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| Pedro            | PSA-X   | Coordenação da oportunidade e articulação comercial no Brasil, em conjunto com Paulo; participação na estrutura de suporte brasileiro.                                     |
+| Paulo            | PSA-X   | Interface técnica principal no Brasil, responsável por traduzir/tropicalizar a conversa técnica entre o fornecedor chinês e o time do EPC.                                 |
+| Leonardo Rosseto | R2      | Aproximação comercial com o EPC, especialmente com orçamento/suprimentos, e ponte institucional para a oportunidade.                                                       |
+| Mateus           | NOV     | Originação da oportunidade e ligação com a China/WCE; apoio de relacionamento e acesso a fornecedores, sujeito a regras de conflito de interesse e rastreabilidade da NOV. |
 
 **Entidades ainda não confirmadas:** a transcrição menciona WCE, Tenenge. Confirmar razão social, nome comercial, domínio, escopo e relação contratual de cada entidade antes de qualquer contato externo.
-
-
 
 ## 3. Oportunidade em avaliação
 
@@ -27,11 +25,15 @@ A conversa tratou de uma oportunidade para apresentar a WCE como fornecedora de 
 
 O objetivo comercial preliminar é oferecer uma alternativa competitiva de fornecimento durante a fase de projeto detalhado e suprimentos, aproveitando:
 
-- a experiência da WCE na fabricação de equipamentos de processo e pressão;
-- a capacidade de Mateus de conectar a equipe brasileira à China e aos fornecedores;
-- o conhecimento técnico de Paulo para fazer a interface e a “tropicalização” da solução;
-- a experiência de Leonardo em aproximação comercial e acesso ao núcleo de orçamento/suprimentos do EPC;
-- o suporte brasileiro e a coordenação comercial da PSA-X.
+* a experiência da WCE na fabricação de equipamentos de processo e pressão;
+
+* a capacidade de Mateus de conectar a equipe brasileira à China e aos fornecedores;
+
+* o conhecimento técnico de Paulo para fazer a interface e a “tropicalização” da solução;
+
+* a experiência de Leonardo em aproximação comercial e acesso ao núcleo de orçamento/suprimentos do EPC;
+
+* o suporte brasileiro e a coordenação comercial da PSA-X.
 
 O escopo não deve ser limitado a trocadores de calor. Foram citados como possibilidades, dependendo do processo e da lista de equipamentos do EPC: vasos de pressão, trocadores, reatores, tanques, bombas, filtros/centrífugas, skids de injeção química, sistemas de vácuo, equipamentos para hidrogênio e outros equipamentos de processo.
 
@@ -41,23 +43,33 @@ O escopo não deve ser limitado a trocadores de calor. Foram citados como possib
 
 Foram relatados na reunião, mas não comprovados nos materiais disponíveis:
 
-- a Petrobras teria divulgado a intenção/investimento de uma unidade de bioQAV e diesel;
-- um consórcio envolvendo a Tenenge/Tenente teria vencido a contratação, com valor aproximado de R$ 1,2 bilhão;
-- outro concorrente teria apresentado proposta na ordem de R$ 1,33 bilhão;
-- a obra teria previsão de início em dezembro;
-- a fase imediata seria de projeto detalhado, discussão do TCC/termo de construção do consórcio e definição de fornecedores;
-- foram mencionados Cubatão e a REDUC. A localização exata da oportunidade, a unidade contratante e a relação entre esses locais precisam ser confirmadas.
+* a Petrobras teria divulgado a intenção/investimento de uma unidade de bioQAV e diesel;
+
+* um consórcio envolvendo a Tenenge/Tenente teria vencido a contratação, com valor aproximado de R\$ 1,2 bilhão;
+
+* outro concorrente teria apresentado proposta na ordem de R\$ 1,33 bilhão;
+
+* a obra teria previsão de início em dezembro;
+
+* a fase imediata seria de projeto detalhado, discussão do TCC/termo de construção do consórcio e definição de fornecedores;
+
+* foram mencionados Cubatão e a REDUC. A localização exata da oportunidade, a unidade contratante e a relação entre esses locais precisam ser confirmadas.
 
 ### 4.2 WCE
 
 Mateus relatou que a WCE:
 
-- atua na fabricação de vasos de pressão, trocadores de calor, reatores e equipamentos pesados;
-- poderia fornecer desde aço carbono até titânio;
-- teria sala limpa e capacidade para fabricação de vasos de titânio;
-- executaria internamente etapas como fabricação, pintura e tratamento químico;
-- teria fornecido ou estaria fornecendo a empresas internacionais de óleo e gás e de outros setores;
-- busca ampliar sua presença no Brasil, inclusive em setores além de óleo e gás.
+* atua na fabricação de vasos de pressão, trocadores de calor, reatores e equipamentos pesados;
+
+* poderia fornecer desde aço carbono até titânio;
+
+* teria sala limpa e capacidade para fabricação de vasos de titânio;
+
+* executaria internamente etapas como fabricação, pintura e tratamento químico;
+
+* teria fornecido ou estaria fornecendo a empresas internacionais de óleo e gás e de outros setores;
+
+* busca ampliar sua presença no Brasil, inclusive em setores além de óleo e gás.
 
 Essas capacidades, referências de clientes, certificações, patentes, registros ASME/ISO e histórico de projetos devem ser comprovados diretamente pela WCE e incluídos em uma apresentação oficial. Não usar nomes de clientes como referência comercial sem autorização.
 
@@ -96,47 +108,66 @@ Não enviar proposta, compromisso de preço, promessa de exclusividade, material
 
 ## 6. Próximas ações identificadas
 
-| Prioridade | Ação | Responsável indicado na conversa | Situação |
-|---|---|---|---|
-| Alta | Obter da WCE o agreement/contrato para análise e assinatura/chancela. | Leonardo, Mateus e representantes da WCE | Pendente; partes e termos exatos não confirmados. |
-| Alta | Definir e documentar a estrutura contratual entre R2, PSA-X, Mateus/empresa aplicável e WCE. | Pedro, Paulo, Leonardo e Mateus | Pendente. |
-| Alta | Preparar apresentação institucional e técnica da WCE, em português e inglês, com histórico de equipamentos e referências autorizadas. | Paulo, com insumos de Mateus/WCE; apoio de Pedro | Pendente. |
-| Alta | Confirmar o contato no núcleo de orçamento/suprimentos da Tenenge/Tenente e o canal correto de abordagem. | Leonardo | Pendente; o nome Bruno Farinazzo foi citado e deve ser confirmado. |
-| Alta | Marcar reunião de apresentação/qualificação com a WCE e o EPC. | Mateus para a conexão com Robert/WCE; Leonardo para o EPC; Paulo para a pauta técnica | Pendente. |
-| Média | Obter o fluxograma e a lista real de equipamentos do processo adotado pelo EPC. | Paulo/PSA-X e Leonardo | Pendente. |
-| Média | Esclarecer requisitos de pré-qualificação, auditoria e aprovação de fornecedores. | Paulo e Leonardo com o EPC | Pendente. |
-| Média | Avaliar visita à planta de bioQAV da REDUC e/ou outra instalação relevante da Tenenge. | Pedro, Paulo e Mateus | Ideia discutida; não aprovada nem agendada. |
-| Média | Avaliar a criação de canal comercial oficial da PSA-X para a oportunidade. | Pedro e Paulo | Proposta; confirmar domínio, responsáveis e regras de uso. |
-| Baixa | Estabelecer rotina de reuniões entre Brasil e China, considerando fuso horário e disponibilidade de Mateus. | Todos | Proposta; definir frequência e ferramenta. |
+| Prioridade | Ação                                                                                                                                  | Responsável indicado na conversa                                                      | Situação                                                           |
+| ---------- | ------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------- | ------------------------------------------------------------------ |
+| Alta       | Obter da WCE o agreement/contrato para análise e assinatura/chancela.                                                                 | Leonardo, Mateus e representantes da WCE                                              | Pendente; partes e termos exatos não confirmados.                  |
+| Alta       | Definir e documentar a estrutura contratual entre R2, PSA-X, Mateus/empresa aplicável e WCE.                                          | Pedro, Paulo, Leonardo e Mateus                                                       | Pendente.                                                          |
+| Alta       | Preparar apresentação institucional e técnica da WCE, em português e inglês, com histórico de equipamentos e referências autorizadas. | Paulo, com insumos de Mateus/WCE; apoio de Pedro                                      | Pendente.                                                          |
+| Alta       | Confirmar o contato no núcleo de orçamento/suprimentos da Tenenge/Tenente e o canal correto de abordagem.                             | Leonardo                                                                              | Pendente; o nome Bruno Farinazzo foi citado e deve ser confirmado. |
+| Alta       | Marcar reunião de apresentação/qualificação com a WCE e o EPC.                                                                        | Mateus para a conexão com Robert/WCE; Leonardo para o EPC; Paulo para a pauta técnica | Pendente.                                                          |
+| Média      | Obter o fluxograma e a lista real de equipamentos do processo adotado pelo EPC.                                                       | Paulo/PSA-X e Leonardo                                                                | Pendente.                                                          |
+| Média      | Esclarecer requisitos de pré-qualificação, auditoria e aprovação de fornecedores.                                                     | Paulo e Leonardo com o EPC                                                            | Pendente.                                                          |
+| Média      | Avaliar visita à planta de bioQAV da REDUC e/ou outra instalação relevante da Tenenge.                                                | Pedro, Paulo e Mateus                                                                 | Ideia discutida; não aprovada nem agendada.                        |
+| Média      | Avaliar a criação de canal comercial oficial da PSA-X para a oportunidade.                                                            | Pedro e Paulo                                                                         | Proposta; confirmar domínio, responsáveis e regras de uso.         |
+| Baixa      | Estabelecer rotina de reuniões entre Brasil e China, considerando fuso horário e disponibilidade de Mateus.                           | Todos                                                                                 | Proposta; definir frequência e ferramenta.                         |
 
 ## 7. Condições econômicas discutidas, mas não aprovadas
 
 A reunião mencionou uma remuneração de aproximadamente **3%**, com dedução de impostos e despesas e divisão do resultado líquido em três partes. Isso foi uma proposta de trabalho, não um acordo validado. Não usar esse percentual em proposta, contrato, e-mail ou planilha até que sejam definidos e aprovados:
 
-- base de cálculo;
-- evento de pagamento;
-- partes beneficiárias;
-- impostos e retenções;
-- despesas reembolsáveis;
-- responsabilidade por viagens e visitas;
-- exclusividade ou não exclusividade;
-- território e prazo;
-- confidencialidade, propriedade intelectual e não circunvenção;
-- tratamento de conflitos de interesse e representação da NOV.
+* base de cálculo;
+
+* evento de pagamento;
+
+* partes beneficiárias;
+
+* impostos e retenções;
+
+* despesas reembolsáveis;
+
+* responsabilidade por viagens e visitas;
+
+* exclusividade ou não exclusividade;
+
+* território e prazo;
+
+* confidencialidade, propriedade intelectual e não circunvenção;
+
+* tratamento de conflitos de interesse e representação da NOV.
 
 ## 8. Perguntas que o próximo agente deve responder antes de avançar
 
-- Qual é o nome jurídico correto da WCE e quem tem autoridade para assinar?
-- WCE e WCR são a mesma empresa, empresas relacionadas ou entidades distintas?
-- Qual é a relação formal de Mateus com a WCE e com a NOV nesta oportunidade?
-- Qual é a razão social correta do EPC: Tenenge, Tenente ou outra entidade?
-- O projeto é em Cubatão, na REDUC ou em outra unidade? Qual é o documento que confirma isso?
-- Qual é o status real do contrato do EPC e qual é o prazo para inclusão/alteração de fornecedores?
-- A WCE já está pré-qualificada ou precisa passar por auditoria do EPC/Petrobras?
-- Quais pacotes de equipamentos ainda estão abertos para cotação?
-- Quem pode receber documentos técnicos e comerciais do lado do EPC?
-- Qual estrutura contratual foi efetivamente aprovada entre R2, PSA-X, WCE e demais envolvidos?
-- Quais informações podem ser compartilhadas com cada participante sem violar confidencialidade ou conflito de interesse?
+* Qual é o nome jurídico correto da WCE e quem tem autoridade para assinar?
+
+* WCE e WCR são a mesma empresa, empresas relacionadas ou entidades distintas?
+
+* Qual é a relação formal de Mateus com a WCE e com a NOV nesta oportunidade?
+
+* Qual é a razão social correta do EPC: Tenenge, Tenente ou outra entidade?
+
+* O projeto é em Cubatão, na REDUC ou em outra unidade? Qual é o documento que confirma isso?
+
+* Qual é o status real do contrato do EPC e qual é o prazo para inclusão/alteração de fornecedores?
+
+* A WCE já está pré-qualificada ou precisa passar por auditoria do EPC/Petrobras?
+
+* Quais pacotes de equipamentos ainda estão abertos para cotação?
+
+* Quem pode receber documentos técnicos e comerciais do lado do EPC?
+
+* Qual estrutura contratual foi efetivamente aprovada entre R2, PSA-X, WCE e demais envolvidos?
+
+* Quais informações podem ser compartilhadas com cada participante sem violar confidencialidade ou conflito de interesse?
 
 ## 9. Instruções operacionais para próximos agentes
 
