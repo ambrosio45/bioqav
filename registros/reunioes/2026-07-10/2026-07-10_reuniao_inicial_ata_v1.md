@@ -6,7 +6,7 @@ Projeto BIOQAV — articulação PSA-X, R2, NOV e WCE
 | -------------- | ------------------------------------------------------------------------------- |
 | Data e horário | Não informados na transcrição                                                   |
 | Participantes  | Pedro e Paulo (PSA-X); Leonardo Rosseto (R2); Mateus (NOV)                      |
-| Fonte          | Transcrição em reuniao\_inicial.md                                              |
+| Fonte          | [`2026-07-10_reuniao_inicial_transcricao.md`](2026-07-10_reuniao_inicial_transcricao.md) |
 | Status da ata  | Minuta elaborada a partir de transcrição; sujeita à validação dos participantes |
 
 ## 1. Objetivo da reunião
