@@ -1,0 +1,719 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Linha do tempo visual do BioQAV na Petrobras, de 2022 às projeções para 2030.">
+  <title>BioQAV na Petrobras — linha do tempo</title>
+  <style>
+    :root {
+      --navy: #062a52;
+      --navy-deep: #001e3e;
+      --ink: #071830;
+      --green: #0e7539;
+      --green-2: #23953f;
+      --green-soft: #edf8ec;
+      --line: #17364f;
+      --rule: #c8d3da;
+      --paper: #fff;
+      --design-w: 1491;
+      --design-h: 1055;
+    }
+
+    * { box-sizing: border-box; }
+    html, body { margin: 0; min-height: 100%; }
+    body {
+      overflow: hidden;
+      background: #dfe6e9;
+      font-family: "Aptos", "Segoe UI", sans-serif;
+      color: var(--ink);
+    }
+
+    #viewport {
+      position: relative;
+      width: 100vw;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .canvas {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 1491px;
+      height: 1055px;
+      overflow: hidden;
+      transform-origin: top center;
+      border: 1px solid #4d5154;
+      background:
+        radial-gradient(circle at 42% 42%, rgba(223,231,236,.24), transparent 20%),
+        radial-gradient(circle at 75% 27%, rgba(217,233,221,.18), transparent 23%),
+        linear-gradient(#fff 0 92.7%, #fbfcfd 92.7% 100%);
+      box-shadow: 0 18px 50px rgba(12,32,48,.18);
+    }
+
+    .hero {
+      position: absolute;
+      inset: 0 0 auto 0;
+      height: 245px;
+      overflow: hidden;
+      background: linear-gradient(180deg, #f9fbfc 0%, #fff 73%, #fafdfc 100%);
+    }
+
+    .hero-art {
+      position: absolute;
+      top: 0;
+      height: 245px;
+      z-index: 0;
+      background-image: url("assets/linha_tempo_bioqav_rpbc_referencia_2026-07-20.png");
+      background-repeat: no-repeat;
+      background-size: 1491px 1055px;
+      pointer-events: none;
+    }
+
+    .hero-art.left {
+      left: 0;
+      width: 385px;
+      background-position: 0 0;
+      -webkit-mask-image: linear-gradient(90deg, #000 0 84%, transparent 100%);
+      mask-image: linear-gradient(90deg, #000 0 84%, transparent 100%);
+    }
+
+    .hero-art.right {
+      right: 0;
+      width: 374px;
+      background-position: right 0;
+      -webkit-mask-image: linear-gradient(90deg, transparent 0, #000 15% 100%);
+      mask-image: linear-gradient(90deg, transparent 0, #000 15% 100%);
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: 2;
+      width: 100%;
+      text-align: center;
+      padding-top: 27px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: "Aptos Display", "Segoe UI", sans-serif;
+      font-size: 76px;
+      line-height: 1.04;
+      letter-spacing: -2.5px;
+      font-weight: 800;
+      color: var(--navy);
+      text-shadow: 0 3px 3px rgba(4,32,62,.12);
+    }
+
+    .subtitle {
+      margin: 13px 0 0;
+      color: #51565d;
+      font-size: 29px;
+      line-height: 1;
+      font-weight: 400;
+      letter-spacing: .2px;
+    }
+
+    .title-rule {
+      display: block;
+      width: 112px;
+      height: 3px;
+      margin: 20px auto 0;
+      border-radius: 99px;
+      background: #208a37;
+    }
+
+    .timeline-rail {
+      position: absolute;
+      left: 27px;
+      right: 31px;
+      top: 271px;
+      height: 5px;
+      z-index: 3;
+      background: var(--line);
+      box-shadow: 0 1px 0 rgba(0,0,0,.08);
+    }
+
+    .step-dot {
+      position: absolute;
+      top: 257px;
+      width: 34px;
+      height: 34px;
+      z-index: 7;
+      border: 4px solid white;
+      border-radius: 50%;
+      background: var(--navy);
+      box-shadow: 0 0 0 2px #849aa7, 0 3px 5px rgba(0,25,50,.18);
+    }
+
+    .step-dot.current { background: #16993d; box-shadow: 0 0 0 2px #128b36, 0 3px 6px rgba(0,56,24,.22); }
+    .step-dot.future { background: #0e5c66; }
+
+    .rail-arrow {
+      position: absolute;
+      top: 264px;
+      z-index: 8;
+      width: 0;
+      height: 0;
+      border-top: 10px solid transparent;
+      border-bottom: 10px solid transparent;
+      border-left: 13px solid var(--line);
+      filter: drop-shadow(2px 0 #fff);
+    }
+
+    .cards {
+      position: absolute;
+      top: 327px;
+      left: 32px;
+      right: 54px;
+      height: 481px;
+      z-index: 4;
+      display: grid;
+      grid-template-columns: 210px 210px 208px 204px 299px 211px;
+      column-gap: 13px;
+      align-items: start;
+    }
+
+    .card {
+      position: relative;
+      height: 469px;
+      padding: 70px 15px 14px;
+      border: 1.5px solid #c7d4dc;
+      border-radius: 16px;
+      background: rgba(255,255,255,.77);
+      box-shadow: inset 0 1px 3px rgba(10,39,59,.03);
+    }
+
+    .card-icon {
+      position: absolute;
+      left: 50%;
+      top: -25px;
+      width: 86px;
+      height: 86px;
+      transform: translateX(-50%);
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: white;
+      background-image: url("assets/linha_tempo_bioqav_rpbc_referencia_2026-07-20.png");
+      background-repeat: no-repeat;
+      background-size: 1491px 1055px;
+      box-shadow: 0 5px 8px rgba(0,36,70,.25), inset 0 0 0 1px rgba(255,255,255,.12);
+    }
+
+    .card-icon svg { width: 62px; height: 62px; opacity: 0; }
+    .card-2022 .card-icon { background-position: -94px -302px; }
+    .card-2023 .card-icon { background-position: -317px -302px; }
+    .card-2024 .card-icon { background-position: -539px -302px; }
+    .card-2025 .card-icon { background-position: -759px -302px; }
+    .card-future .card-icon { background-position: -1287px -302px; }
+
+    .year {
+      margin: 0;
+      color: var(--navy);
+      font-size: 35px;
+      line-height: 1;
+      font-weight: 800;
+      letter-spacing: -.6px;
+      text-align: center;
+    }
+
+    .card-title {
+      min-height: 59px;
+      margin: 14px -5px 0;
+      font-size: 19px;
+      line-height: 1.22;
+      font-weight: 750;
+      letter-spacing: -.15px;
+      text-align: center;
+    }
+
+    .card-title::after {
+      content: "";
+      display: block;
+      width: 49px;
+      height: 2px;
+      margin: 10px auto 0;
+      border-radius: 9px;
+      background: var(--green);
+    }
+
+    .card ul {
+      margin: 16px 0 0;
+      padding: 0;
+      list-style: none;
+      font-size: 15.7px;
+      line-height: 1.3;
+      font-weight: 450;
+      letter-spacing: -.15px;
+    }
+
+    .card li {
+      position: relative;
+      margin: 0 0 31px;
+      padding-left: 9px;
+    }
+
+    .card li::before {
+      content: "";
+      position: absolute;
+      left: -3px;
+      top: .55em;
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+      background: #118245;
+    }
+
+    .card-2024 ul, .card-2025 ul, .card-future ul { margin-top: 16px; }
+    .card-2024 li { margin-bottom: 31px; }
+    .card-2025 li { margin-bottom: 13px; }
+    .card-future li { margin-bottom: 13px; }
+
+    .card.current {
+      height: 557px;
+      padding: 120px 13px 86px;
+      transform: translateY(-76px);
+      border: 2px solid #17873b;
+      border-radius: 17px;
+      background:
+        radial-gradient(circle at 50% 26%, rgba(196,236,188,.78), transparent 34%),
+        linear-gradient(140deg, rgba(241,252,239,.97), rgba(255,255,255,.95));
+      box-shadow: 0 5px 10px rgba(0,78,32,.12), inset 0 0 0 4px rgba(255,255,255,.65);
+    }
+
+    .current-badge {
+      position: absolute;
+      top: -49px;
+      left: 56px;
+      width: 184px;
+      height: 39px;
+      display: grid;
+      place-items: center;
+      border-radius: 14px 14px 0 0;
+      color: #fff;
+      font-size: 18px;
+      line-height: 1;
+      font-weight: 800;
+      background: linear-gradient(#24a63d, #0d762d);
+      text-shadow: 0 1px 2px rgba(0,50,15,.35);
+      box-shadow: 0 4px 8px rgba(14,109,45,.2);
+    }
+
+    .card.current .card-icon {
+      top: 18px;
+      width: 101px;
+      height: 101px;
+      background-position: -1012px -270px;
+      box-shadow: 0 6px 10px rgba(0,80,32,.27), inset 0 0 0 1px rgba(255,255,255,.16);
+    }
+
+    .card.current .card-icon svg { width: 75px; height: 75px; }
+    .card.current .year { color: #0a6230; font-size: 49px; }
+    .card.current .card-title { min-height: 30px; margin-top: 1px; color: #075a2d; font-size: 22px; }
+    .card.current .card-title::after { margin-top: 8px; width: 51px; }
+    .card.current ul { margin-top: 13px; font-size: 15.6px; line-height: 1.14; }
+    .card.current li { margin-bottom: 3px; padding-left: 12px; }
+    .card.current li::before { left: -2px; }
+
+    .current-note {
+      position: absolute;
+      left: 9px;
+      right: 9px;
+      bottom: 8px;
+      height: 88px;
+      display: grid;
+      grid-template-columns: 62px 1fr;
+      align-items: center;
+      gap: 6px;
+      padding: 7px 10px;
+      border: 1.5px solid #4aad50;
+      border-radius: 11px;
+      color: #173023;
+      background: rgba(234,248,230,.86);
+      font-size: 14.2px;
+      line-height: 1.15;
+    }
+
+    .note-icon {
+      width: 55px;
+      height: 55px;
+      display: grid;
+      place-items: center;
+      border-radius: 50%;
+      color: #fff;
+      background: linear-gradient(145deg, #36ac45, #137932);
+      box-shadow: 0 3px 7px rgba(0,74,22,.22);
+    }
+    .note-icon svg { width: 39px; height: 39px; }
+    .current-note strong { color: #176d2d; }
+
+    .quick-read {
+      position: absolute;
+      left: 35px;
+      right: 37px;
+      top: 828px;
+      height: 126px;
+      z-index: 5;
+      display: grid;
+      grid-template-columns: 242px 1fr 1fr 1.12fr;
+      align-items: stretch;
+      overflow: hidden;
+      border: 2px solid var(--navy);
+      border-radius: 23px 55px 55px 23px;
+      background: linear-gradient(100deg, #f8fbfc, #fff);
+      box-shadow: 10px 11px 12px rgba(19,44,58,.12);
+    }
+
+    .quick-label {
+      position: relative;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      padding: 0 25px 0 30px;
+      color: #fff;
+      background: linear-gradient(135deg, #00566d, #003454 62%, #082c4b);
+      font-size: 24px;
+      line-height: 1.35;
+      font-weight: 800;
+    }
+
+    .quick-label::after {
+      content: "";
+      position: absolute;
+      top: -2px;
+      right: -55px;
+      width: 56px;
+      height: 130px;
+      background: #f9fbfc;
+      transform: skewX(-23deg);
+      transform-origin: top;
+      z-index: 0;
+    }
+
+    .quick-label > * { position: relative; z-index: 1; }
+    .quick-label span { display: block; width: 104px; transform: scaleX(.86); transform-origin: left center; }
+    .quick-label svg { flex: 0 0 auto; width: 80px; height: 80px; }
+
+    .quick-item {
+      position: relative;
+      display: grid;
+      grid-template-columns: 95px 1fr;
+      align-items: center;
+      gap: 18px;
+      padding: 8px 25px 8px 40px;
+    }
+
+    .quick-label + .quick-item { padding-left: 34px; }
+
+    .quick-item + .quick-item::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 22px;
+      bottom: 22px;
+      width: 1px;
+      background: #aebbc4;
+    }
+
+    .quick-icon {
+      width: 91px;
+      height: 91px;
+      display: grid;
+      place-items: center;
+      border: 1.5px solid #63b062;
+      border-radius: 50%;
+      color: #177d34;
+      background-image: url("assets/linha_tempo_bioqav_rpbc_referencia_2026-07-20.png");
+      background-repeat: no-repeat;
+      background-size: 1491px 1055px;
+      box-shadow: inset 0 0 0 8px rgba(255,255,255,.28);
+    }
+    .quick-icon svg { width: 68px; height: 68px; opacity: 0; }
+    .quick-item:nth-child(2) .quick-icon { background-position: -312px -846px; }
+    .quick-item:nth-child(3) .quick-icon { background-position: -695px -846px; }
+    .quick-item:nth-child(4) .quick-icon { background-position: -1069px -846px; }
+    .quick-text { font-size: 18px; line-height: 1.25; }
+    .quick-text strong { display: block; margin-bottom: 5px; color: #117232; font-size: 22px; }
+
+    footer {
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 77px;
+      display: flex;
+      align-items: center;
+      padding: 0 34px;
+      border-top: 10px solid rgba(243,246,248,.75);
+      color: #495d70;
+      background: rgba(251,252,253,.94);
+    }
+
+    .footer-leaf { width: 48px; height: 48px; color: #a6b3bd; margin-right: 30px; }
+    .source-line { flex: 1; font-size: 16px; letter-spacing: -.1px; }
+    .footer-icons { display: flex; align-items: center; gap: 17px; color: #8b8e90; }
+    .footer-icons svg { width: 42px; height: 42px; }
+    .footer-icons i { width: 1px; height: 29px; background: #b9bec2; }
+
+    .reference-overlay {
+      position: absolute;
+      inset: 0;
+      z-index: 99;
+      width: 100%;
+      height: 100%;
+      object-fit: fill;
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity .18s ease;
+    }
+    body.show-reference .reference-overlay { opacity: .52; }
+
+    .compare-hint {
+      position: absolute;
+      right: 16px;
+      top: 12px;
+      z-index: 100;
+      display: none;
+      padding: 7px 12px;
+      border-radius: 999px;
+      color: #fff;
+      background: rgba(0,22,46,.84);
+      font-size: 13px;
+      box-shadow: 0 4px 13px rgba(0,0,0,.2);
+    }
+    body.show-reference .compare-hint { display: block; }
+
+    .icon-stroke * {
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2.5;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    @media print {
+      @page { size: 1491px 1055px; margin: 0; }
+      body, #viewport { width: 1491px; height: 1055px; overflow: visible; background: #fff; }
+      .canvas { left: 0; transform: none !important; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <svg width="0" height="0" aria-hidden="true" style="position:absolute">
+    <defs>
+      <symbol id="icon-refinery" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M10 55h45M15 54V31h11v23M18 31V13h6v18M17 13h8l-2-5h-4zM20 18h3M20 24h3M30 54V38h18v16M48 41c5 1 7 4 7 8v5M31 43h17M37 38v-8h6v8"/>
+        </g>
+      </symbol>
+      <symbol id="icon-flask" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M24 9h16M27 9v17L14 48c-3 5 0 8 6 8h24c6 0 9-3 6-8L37 26V9M21 43h24M31 47c-4-6 2-10 5-15 2 8-1 14-5 15z"/>
+        </g>
+      </symbol>
+      <symbol id="icon-law" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M14 8h31l7 7v21M45 8v8h8M20 21h19M20 29h15M20 37h11M14 8v48h27"/>
+          <path d="M40 36l14 14M48 32l10 10M36 40l8-8 14 14-8 8zM50 54l6 4"/>
+        </g>
+      </symbol>
+      <symbol id="icon-tank" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M11 18h40v35H11zM11 18c0-7 40-7 40 0M11 26c6 3 34 3 40 0M17 53v4M45 53v4M8 57h48"/>
+          <path d="M29 43c-4-6 2-10 5-16 6 7 6 14 0 18-2 2-5 1-5-2zM20 34h9M20 39h7"/>
+        </g>
+      </symbol>
+      <symbol id="icon-construction" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M8 55h50M17 55V35h10v20M20 35V22h4v13M19 22h6l-1-4h-4zM34 55V41h14v14M48 44c5 1 7 4 7 8v3M34 47h14"/>
+          <path d="M15 18h35M28 18l7-7M35 11l17 4M43 16v20M40 36h6M51 15v11"/>
+        </g>
+      </symbol>
+      <symbol id="icon-chart" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M9 55h48M14 55V43h8v12M28 55V34h8v21M42 55V25h8v30"/>
+          <path d="M13 34l13-12 9 7 17-17M43 12h9v9"/>
+        </g>
+      </symbol>
+      <symbol id="icon-stopwatch" viewBox="0 0 72 72">
+        <g class="icon-stroke">
+          <path d="M27 8h18M36 8v8M22 19l-5-5M50 19l5-5M36 17a25 25 0 1 1-20 10"/>
+          <path d="M36 42l12-12M12 35H2M15 44H7M20 53H11M28 62H18"/>
+          <circle cx="36" cy="42" r="2"/>
+        </g>
+      </symbol>
+      <symbol id="icon-leafdrop" viewBox="0 0 72 72">
+        <path fill="currentColor" d="M37 5C30 17 18 27 18 42a19 19 0 0 0 38 0C56 29 44 17 37 5z"/>
+        <path fill="#e7f6e7" d="M35 59c-9-2-14-8-13-17 8 1 13 5 16 12 0-10 5-17 15-20 1 12-5 21-18 25z"/>
+        <path fill="none" stroke="#1d8738" stroke-width="2" d="M27 44c4 4 7 8 9 14M49 39c-6 5-10 11-12 19"/>
+      </symbol>
+      <symbol id="icon-factory" viewBox="0 0 72 72">
+        <g class="icon-stroke">
+          <path d="M8 59h56M12 59V38l16 9V36l16 10V29h12v30M48 29V13h7v16M15 17h9l-1-6h-7zM17 17v22M51 42h4M51 49h4M20 50h4M32 50h4"/>
+        </g>
+      </symbol>
+      <symbol id="icon-leaf" viewBox="0 0 64 64">
+        <g class="icon-stroke">
+          <path d="M10 52C8 29 21 14 50 8c1 26-13 42-40 44zM13 49c12-12 22-21 33-32M25 32c-1-6-1-10 0-14M33 25c5 1 9 1 13 0"/>
+          <path d="M15 55c-5-1-9-5-11-11 8-1 13 3 15 10"/>
+        </g>
+      </symbol>
+    </defs>
+  </svg>
+
+  <div id="viewport">
+    <main class="canvas" aria-label="BioQAV na Petrobras: evolução, marco atual e projeções futuras">
+      <header class="hero">
+        <div class="hero-art left" aria-hidden="true"></div>
+        <div class="hero-art right" aria-hidden="true"></div>
+        <div class="hero-copy">
+          <h1>BioQAV na Petrobras</h1>
+          <p class="subtitle">Evolução, marco atual e projeções futuras</p>
+          <span class="title-rule" aria-hidden="true"></span>
+        </div>
+      </header>
+
+      <div class="timeline-rail" aria-hidden="true"></div>
+      <span class="step-dot" style="left:121px" aria-hidden="true"></span>
+      <span class="step-dot" style="left:344px" aria-hidden="true"></span>
+      <span class="step-dot" style="left:565px" aria-hidden="true"></span>
+      <span class="step-dot" style="left:786px" aria-hidden="true"></span>
+      <span class="step-dot current" style="left:1046px;top:233px" aria-hidden="true"></span>
+      <span class="step-dot future" style="left:1315px" aria-hidden="true"></span>
+      <i class="rail-arrow" style="left:249px" aria-hidden="true"></i>
+      <i class="rail-arrow" style="left:470px" aria-hidden="true"></i>
+      <i class="rail-arrow" style="left:690px" aria-hidden="true"></i>
+      <i class="rail-arrow" style="left:901px" aria-hidden="true"></i>
+      <i class="rail-arrow" style="left:1445px" aria-hidden="true"></i>
+
+      <section class="cards" aria-label="Linha do tempo">
+        <article class="card card-2022" data-evidence="F-009 F-010">
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-refinery"/></svg></div>
+          <h2 class="year">2022</h2>
+          <h3 class="card-title">Início da trajetória<br>industrial</h3>
+          <ul>
+            <li>Comercialização do Diesel R5 abre caminho para o biorrefino.</li>
+            <li>Petrobras anuncia a 1ª planta dedicada de BioQAV + diesel renovável na RPBC.</li>
+          </ul>
+        </article>
+
+        <article class="card card-2023" data-evidence="F-009">
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-flask"/></svg></div>
+          <h2 class="year">2023</h2>
+          <h3 class="card-title">Definição tecnológica</h3>
+          <ul>
+            <li>Contratação da tecnologia HEFA para a planta da RPBC.</li>
+            <li>Consolidação da rota com matérias-primas renováveis.</li>
+          </ul>
+        </article>
+
+        <article class="card card-2024" data-evidence="marco legal Combustível do Futuro">
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-law"/></svg></div>
+          <h2 class="year">2024</h2>
+          <h3 class="card-title">Marco regulatório</h3>
+          <ul>
+            <li>Lei do Combustível do Futuro institui o ProBioQAV.</li>
+            <li>Ambiente regulatório passa a impulsionar a demanda por SAF.</li>
+          </ul>
+        </article>
+
+        <article class="card card-2025" data-evidence="F-011">
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-tank"/></svg></div>
+          <h2 class="year">2025</h2>
+          <h3 class="card-title">Da preparação à<br>oferta comercial</h3>
+          <ul>
+            <li>Reduc recebe certificação e avança no SAF por coprocessamento.</li>
+            <li>Revap realiza teste industrial de produção de SAF.</li>
+            <li>Petrobras faz a 1ª venda comercial de SAF produzido no Brasil.</li>
+          </ul>
+        </article>
+
+        <article class="card current" data-evidence="F-010 F-017">
+          <div class="current-badge">MARCO ATUAL</div>
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-construction"/></svg></div>
+          <h2 class="year">2026</h2>
+          <h3 class="card-title">Marco atual</h3>
+          <ul>
+            <li>RPBC tem FID aprovada em junho de 2026.</li>
+            <li>Investimento estimado: US$ 1,2 bilhão.</li>
+            <li>Capacidade da planta dedicada: até 15 mil bpd.</li>
+            <li>Início das obras previsto até o fim de 2026.</li>
+            <li>Reduc segue como operação comercial por coprocessamento.</li>
+            <li>Ainda não há planta dedicada de BioQAV em operação.</li>
+          </ul>
+          <div class="current-note">
+            <span class="note-icon"><svg aria-hidden="true"><use href="#icon-chart"/></svg></span>
+            <span><strong>Situação atual:</strong> SAF comercial já existe na Petrobras, mas a grande escala virá com as plantas dedicadas.</span>
+          </div>
+        </article>
+
+        <article class="card card-future" data-evidence="F-010; demais projeções pendentes de validação">
+          <div class="card-icon"><svg aria-hidden="true"><use href="#icon-chart"/></svg></div>
+          <h2 class="year">2030+</h2>
+          <h3 class="card-title">Projeções futuras</h3>
+          <ul>
+            <li>Entrada em operação prevista da planta dedicada da RPBC em 2030.</li>
+            <li>Complexo Boaventura previsto para após 2029.</li>
+            <li>Expansão de coprocessamento em outras refinarias.</li>
+            <li>Replan ATJ segue em estudo como rota futura.</li>
+          </ul>
+        </article>
+      </section>
+
+      <section class="quick-read" aria-label="Leitura rápida">
+        <div class="quick-label">
+          <svg aria-hidden="true"><use href="#icon-stopwatch"/></svg>
+          <span>LEITURA<br>RÁPIDA</span>
+        </div>
+        <div class="quick-item">
+          <span class="quick-icon"><svg aria-hidden="true"><use href="#icon-leafdrop"/></svg></span>
+          <div class="quick-text"><strong>1. Hoje:</strong>SAF comercial via<br>coprocessamento.</div>
+        </div>
+        <div class="quick-item">
+          <span class="quick-icon"><svg aria-hidden="true"><use href="#icon-construction"/></svg></span>
+          <div class="quick-text"><strong>2. Próximo passo:</strong>início das obras<br>da RPBC.</div>
+        </div>
+        <div class="quick-item">
+          <span class="quick-icon"><svg aria-hidden="true"><use href="#icon-factory"/></svg></span>
+          <div class="quick-text"><strong>3. Futuro:</strong>escala industrial<br>com plantas dedicadas.</div>
+        </div>
+      </section>
+
+      <footer>
+        <svg class="footer-leaf" aria-hidden="true"><use href="#icon-leaf"/></svg>
+        <p class="source-line">Resumo visual elaborado com base em anúncios oficiais da Petrobras e no marco legal do Combustível do Futuro.</p>
+        <div class="footer-icons" aria-hidden="true">
+          <svg><use href="#icon-refinery"/></svg><i></i>
+          <svg viewBox="0 0 64 64"><g class="icon-stroke"><path d="M8 28l48-16-14 17 9 10-6 3-12-8-9 18-4-2 4-22z"/></g></svg><i></i>
+          <svg><use href="#icon-leaf"/></svg><i></i>
+          <svg viewBox="0 0 64 64"><g class="icon-stroke"><rect x="11" y="14" width="42" height="40" rx="3"/><path d="M11 25h42M20 9v10M44 9v10M20 33h3M30 33h3M40 33h3M20 42h3M30 42h3M40 42h3"/></g></svg>
+        </div>
+      </footer>
+
+      <img class="reference-overlay" src="assets/linha_tempo_bioqav_rpbc_referencia_2026-07-20.png" alt="" aria-hidden="true">
+      <span class="compare-hint">Comparação com a referência — pressione R para ocultar</span>
+    </main>
+  </div>
+
+  <script>
+    (() => {
+      const canvas = document.querySelector('.canvas');
+      const W = 1491;
+      const H = 1055;
+
+      function fit() {
+        const scale = Math.min(innerWidth / W, innerHeight / H);
+        canvas.style.transform = `translateX(-50%) scale(${scale})`;
+      }
+
+      addEventListener('resize', fit, { passive: true });
+      addEventListener('keydown', (event) => {
+        if (event.key.toLowerCase() === 'r') document.body.classList.toggle('show-reference');
+      });
+      fit();
+    })();
+  </script>
+</body>
+</html>

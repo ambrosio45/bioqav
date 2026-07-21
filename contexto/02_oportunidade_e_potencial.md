@@ -1,6 +1,6 @@
 # Oportunidade e potencial do projeto
 
-> **Atualizado em:** 18/07/2026
+> **Atualizado em:** 20/07/2026
 > **Escopo:** narrativa da oportunidade que a PSA-X apresentará à WCE.
 
 ## Definição da oportunidade
@@ -12,7 +12,7 @@ Cliente, local e EPC estão **confirmados** no contrato R2–WCE ([F-001](../fon
 ## Estágio conhecido
 
 - O consórcio apresentou a melhor oferta, mas a comunicação registrada informa que o contrato ainda não havia sido assinado e a equipe de suprimentos ainda não estava formada. A data do e-mail não aparece na captura ([F-006](../fontes/README.md#f-006)).
-- O valor aproximado de R$ 1,2 bilhão e a previsão de início em dezembro de 2026 foram **relatados** na reunião inicial e não devem ser apresentados como dados contratuais ([F-005](../fontes/README.md#f-005)).
+- **Confirmado em registro operacional:** o valor informado é de aproximadamente **US$ 1,2 bilhão**, identificado como o montante cobrado pela Tenenge para o projeto, e o marco de início é dezembro de 2026. Esses dados não representam o escopo ou o faturamento potencial da WCE e ainda devem ser confrontados com documentação primária do EPC ([F-017](../fontes/README.md#f-017)).
 - A entrada da WCE por meio do EPC, em vez de pré-qualificação direta na licitação Petrobras, foi **relatada** e precisa ser confirmada formalmente com a Tenenge ([F-005](../fontes/README.md#f-005)).
 
 ## Potencial para a WCE

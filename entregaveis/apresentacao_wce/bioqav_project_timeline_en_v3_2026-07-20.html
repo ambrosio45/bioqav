@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="BIOQAV project timeline, investment and production capacity.">
+  <title>BIOQAV Project Timeline</title>
+  <style>
+    :root {
+      --navy: #073653;
+      --green: #17842c;
+      --gold: #f1b500;
+      --ink: #172f42;
+      --muted: #516475;
+      --paper: #fbfcfa;
+      --line: #d8e0e4;
+    }
+
+    * { box-sizing: border-box; }
+
+    html,
+    body {
+      min-height: 100%;
+      margin: 0;
+      background: #e8ecee;
+    }
+
+    body {
+      display: grid;
+      place-items: center;
+      padding: 18px;
+      color: var(--ink);
+      font-family: Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", sans-serif;
+    }
+
+    .slide {
+      width: min(1600px, calc(100vw - 36px), calc((100vh - 36px) * 16 / 9));
+      aspect-ratio: 16 / 9;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 56% 31% 13%;
+      background: var(--paper);
+      border: 1px solid rgba(7, 54, 83, 0.08);
+      box-shadow: 0 22px 70px rgba(20, 44, 60, 0.15);
+    }
+
+    .timeline {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      gap: 4%;
+      padding: 5.5% 7% 0;
+    }
+
+    .timeline::before {
+      content: "";
+      position: absolute;
+      top: 24.8%;
+      left: 18.5%;
+      right: 18.5%;
+      height: 0.75%;
+      min-height: 5px;
+      z-index: 0;
+      background: linear-gradient(90deg, var(--navy) 0 49%, var(--green) 51% 100%);
+    }
+
+    .milestone {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      justify-items: center;
+      text-align: center;
+    }
+
+    .icon-ring {
+      width: clamp(110px, 13vw, 212px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      position: relative;
+      border: clamp(5px, 0.48vw, 9px) solid var(--navy);
+      border-radius: 50%;
+      background: var(--paper);
+    }
+
+    .icon-ring::before {
+      content: "";
+      position: absolute;
+      inset: calc(clamp(5px, 0.48vw, 9px) * -1);
+      border-radius: inherit;
+      border: clamp(5px, 0.48vw, 9px) solid transparent;
+      border-top-color: var(--gold);
+      border-left-color: var(--gold);
+      transform: rotate(-37deg);
+      clip-path: polygon(0 0, 55% 0, 55% 55%, 0 55%);
+    }
+
+    .milestone:nth-child(2) .icon-ring {
+      border-color: var(--green);
+    }
+
+    .milestone:nth-child(2) .icon-ring::before {
+      display: none;
+    }
+
+    .icon-ring svg {
+      width: 58%;
+      height: 58%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 4;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+      color: var(--navy);
+    }
+
+    .milestone:nth-child(2) .icon-ring svg { color: var(--green); }
+
+    .pin {
+      width: 1.2%;
+      min-width: 8px;
+      height: 8%;
+      min-height: 32px;
+      margin-top: -1px;
+      position: relative;
+      background: currentColor;
+      color: var(--navy);
+    }
+
+    .milestone:nth-child(2) .pin { color: var(--green); }
+
+    .pin::after {
+      content: "";
+      width: 16px;
+      aspect-ratio: 1;
+      position: absolute;
+      left: 50%;
+      bottom: -4px;
+      border-radius: 50%;
+      background: currentColor;
+      transform: translateX(-50%);
+    }
+
+    .date {
+      margin-top: 3.2%;
+      color: var(--navy);
+      font-size: clamp(22px, 2.6vw, 46px);
+      font-weight: 800;
+      line-height: 1;
+      letter-spacing: -0.025em;
+    }
+
+    .milestone:nth-child(2) .date { color: var(--green); }
+
+    .date::after {
+      content: "";
+      display: block;
+      width: 35%;
+      height: 4px;
+      margin: 13px auto 14px;
+      background: var(--gold);
+    }
+
+    .event {
+      max-width: 390px;
+      font-size: clamp(14px, 1.45vw, 25px);
+      line-height: 1.18;
+    }
+
+    .note {
+      margin-top: 12px;
+      color: var(--ink);
+      font-family: Georgia, "Times New Roman", serif;
+      font-size: clamp(13px, 1.25vw, 22px);
+      font-style: italic;
+    }
+
+    .note::before {
+      content: "";
+      display: inline-block;
+      width: 10px;
+      aspect-ratio: 1;
+      margin-right: 10px;
+      border-radius: 50%;
+      background: var(--green);
+    }
+
+    .facts {
+      display: grid;
+      grid-template-columns: 1fr 1px 1fr;
+      grid-template-rows: auto 1fr;
+      gap: 0 5%;
+      padding: 0 16%;
+      align-content: start;
+    }
+
+    .contract {
+      grid-column: 1 / -1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.25%;
+      min-height: 22%;
+      margin-bottom: 2.2%;
+      padding: 1.15% 2%;
+      border: 2px dashed var(--green);
+      border-radius: 15px;
+      color: var(--navy);
+      font-size: clamp(14px, 1.4vw, 24px);
+      font-weight: 800;
+      letter-spacing: 0.01em;
+      text-align: center;
+    }
+
+    .contract svg {
+      width: clamp(28px, 2.8vw, 48px);
+      flex: 0 0 auto;
+      fill: none;
+      stroke: var(--green);
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .contract strong { color: var(--green); }
+
+    .divider {
+      width: 1px;
+      height: 64%;
+      align-self: center;
+      background: var(--gold);
+    }
+
+    .metric {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      align-items: center;
+      gap: 4%;
+    }
+
+    .metric-icon {
+      width: clamp(78px, 8vw, 132px);
+      aspect-ratio: 1;
+      display: grid;
+      place-items: center;
+      border: 4px solid var(--green);
+      border-radius: 50%;
+      color: var(--green);
+    }
+
+    .metric-icon svg {
+      width: 58%;
+      height: 58%;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 3;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
+    .metric-value {
+      color: var(--green);
+      font-size: clamp(24px, 2.8vw, 50px);
+      font-weight: 850;
+      line-height: 0.98;
+      letter-spacing: -0.03em;
+      white-space: nowrap;
+    }
+
+    .metric-value::after {
+      content: "";
+      display: block;
+      width: 31%;
+      height: 4px;
+      margin: 14px 0 10px;
+      background: var(--gold);
+    }
+
+    .metric-label {
+      font-size: clamp(14px, 1.35vw, 24px);
+      line-height: 1.2;
+    }
+
+    .footer {
+      display: grid;
+      justify-items: center;
+      align-content: start;
+      gap: 24%;
+      padding: 0 16% 1.4%;
+    }
+
+    .capacity-note {
+      width: 90%;
+      padding: 1.1% 2%;
+      border: 2px dashed var(--green);
+      border-radius: 13px;
+      font-size: clamp(13px, 1.18vw, 21px);
+      text-align: center;
+    }
+
+    .sources {
+      color: var(--muted);
+      font-size: clamp(11px, 1.05vw, 18px);
+      letter-spacing: 0.02em;
+    }
+
+    @media (max-width: 900px) {
+      body { padding: 0; background: var(--paper); }
+      .slide {
+        width: 100vw;
+        border: 0;
+        box-shadow: none;
+      }
+      .timeline { padding-inline: 4.5%; }
+      .facts, .footer { padding-inline: 10%; }
+      .date::after { margin-block: 7px; }
+      .note { margin-top: 6px; }
+    }
+
+    @media print {
+      @page { size: 16in 9in; margin: 0; }
+      html, body { width: 16in; height: 9in; background: white; }
+      body { display: block; padding: 0; }
+      .slide { width: 16in; height: 9in; border: 0; box-shadow: none; }
+    }
+  </style>
+</head>
+<body>
+  <main class="slide" aria-label="BIOQAV project timeline infographic">
+    <section class="timeline" aria-label="Project milestones">
+      <article class="milestone">
+        <div class="icon-ring" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path d="M25 12h35l16 16v34H25z"/>
+            <path d="M60 12v17h16M36 39h23M36 49h18"/>
+            <circle cx="68" cy="68" r="19" fill="var(--paper)"/>
+            <path d="m59 68 6 6 12-14"/>
+          </svg>
+        </div>
+        <span class="pin" aria-hidden="true"></span>
+        <div class="date">19/06/2026</div>
+        <div class="event">Investment approval (FID)</div>
+      </article>
+
+      <article class="milestone">
+        <div class="icon-ring" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path d="M24 79h55M33 79V33h35M29 32h48L59 21H42z"/>
+            <path d="M51 32v47M68 32v19M68 51h8v8"/>
+            <path d="M38 79V61l10-9v27M48 65l11-10v24M59 62l10-8v25"/>
+          </svg>
+        </div>
+        <span class="pin" aria-hidden="true"></span>
+        <div class="date">DECEMBER 2026</div>
+        <div class="event">Planned start of construction</div>
+        <div class="note">Petrobras: by the end of 2026</div>
+      </article>
+
+      <article class="milestone">
+        <div class="icon-ring" aria-hidden="true">
+          <svg viewBox="0 0 100 100">
+            <path d="M20 80h64M27 80V31h18v49M31 31V18h10v13M52 80V46h24v34M59 46V36h10v10"/>
+            <path d="M31 44h10M31 54h10M31 64h10M56 57h16M56 67h16"/>
+            <path d="M45 71h7M76 61h8v19"/>
+          </svg>
+        </div>
+        <span class="pin" aria-hidden="true"></span>
+        <div class="date">2030</div>
+        <div class="event">Planned start of operations</div>
+      </article>
+    </section>
+
+    <section class="facts" aria-label="Contract and project scale">
+      <div class="contract">
+        <svg viewBox="0 0 64 48" aria-hidden="true">
+          <path d="m5 22 10-9 13 7-7 7-8-4-5 5M59 22l-10-9-13 7 7 7 8-4 5 5"/>
+          <path d="m21 27 14 13c2 2 6-2 4-4l-9-8M26 24l13 12M42 32l4 4M13 29l12 11"/>
+        </svg>
+        <span>EPC CONTRACT WINNER: BIOQAV PTU CONSORTIUM (<strong>TENENGE–OECI</strong>)</span>
+      </div>
+
+      <div class="metric">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M9 51h46M14 47V34h8v13M29 47V26h8v21M44 47V17h8v30"/>
+            <path d="m12 25 11-10 9 5 18-13M43 7h7v7"/>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value">US$ 1.2 BILLION</div>
+          <div class="metric-label">Estimated project investment</div>
+        </div>
+      </div>
+
+      <div class="divider" aria-hidden="true"></div>
+
+      <div class="metric">
+        <div class="metric-icon" aria-hidden="true">
+          <svg viewBox="0 0 64 64">
+            <path d="M32 6C24 18 16 28 16 39a16 16 0 0 0 32 0C48 28 40 18 32 6Z"/>
+            <path d="M27 46c10 0 17-6 20-16M28 45c1-8 6-14 14-17"/>
+          </svg>
+        </div>
+        <div>
+          <div class="metric-value">UP TO 15,000 BPD</div>
+          <div class="metric-label">SAF + renewable diesel</div>
+        </div>
+      </div>
+    </section>
+
+    <footer class="footer">
+      <div class="capacity-note">15,000 BPD is the combined capacity of SAF and renewable diesel.</div>
+      <div class="sources">Sources: F-001, F-006, F-010 and F-017</div>
+    </footer>
+  </main>
+</body>
+</html>

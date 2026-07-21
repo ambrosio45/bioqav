@@ -1,6 +1,6 @@
 # Contexto operacional — BIOQAV
 
-> **Atualizado em:** 18/07/2026
+> **Atualizado em:** 20/07/2026
 >
 > **Ponto de entrada oficial:** este painel e os módulos em [`contexto/`](contexto/) formam a fonte de verdade operacional.
 > **Catálogo de evidências:** [`fontes/README.md`](fontes/README.md).
@@ -13,6 +13,7 @@
 - **Confirmado em registro operacional:** reunião técnica entre WCE e equipe Brasil marcada para 20/07/2026, às 21h ([F-008](fontes/README.md#f-008)).
 - **Confirmado publicamente:** a Petrobras definiu a rota HEFA para a planta dedicada de BioQAV/HVO da RPBC e aprovou o FID do projeto ([F-009](fontes/README.md#f-009), [F-010](fontes/README.md#f-010)).
 - **Confirmado publicamente:** a Petrobras descreveu uma unidade de pré-tratamento e tanques para matérias-primas e derivados ([F-011](fontes/README.md#f-011)).
+- **Confirmado em registro operacional:** o valor informado para o projeto é de aproximadamente US$ 1,2 bilhão, identificado como montante cobrado pela Tenenge, e o marco de início é dezembro de 2026; a documentação primária do EPC ainda deve ser obtida ([F-017](fontes/README.md#f-017)).
 - **Pendente de validação:** o escopo técnico, os pacotes de equipamentos, o cronograma do EPC e os requisitos formais de qualificação ainda não foram recebidos.
 
 ## Objetivo imediato

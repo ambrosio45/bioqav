@@ -1,6 +1,6 @@
 # Ações, pendências e decisões
 
-> **Atualizado em:** 18/07/2026
+> **Atualizado em:** 20/07/2026
 > **Escopo:** controle operacional da oportunidade.
 
 ## Ações
@@ -40,6 +40,8 @@
 | 18/07/2026 | A PSA-X deverá tratar a adequação aos requisitos brasileiros/NR-13. | Direção de trabalho confirmada; detalhamento pendente. | [F-008](../fontes/README.md#f-008) |
 | 18/07/2026 | Despesas e impostos seriam abatidos antes da divisão tripartite. | Proposta verbal registrada; formalização pendente. | [F-008](../fontes/README.md#f-008) |
 | 18/07/2026 | A apresentação prioritária será preparada pela PSA-X para mostrar à WCE a oportunidade e o potencial do BIOQAV. | Direção de trabalho confirmada pelo usuário. | `AGENTS.md` |
+| 20/07/2026 | O valor informado para o projeto é de aproximadamente US$ 1,2 bilhão e corresponde ao montante cobrado pela Tenenge; não representa o escopo potencial da WCE. | Confirmado pelo responsável em registro operacional; documento primário do EPC ainda deve ser obtido. | [F-017](../fontes/README.md#f-017) |
+| 20/07/2026 | O marco de início do projeto é dezembro de 2026. | Confirmado pelo responsável em registro operacional; documento primário do EPC ainda deve ser obtido. | [F-017](../fontes/README.md#f-017) |
 
 ## Histórico documental
 
